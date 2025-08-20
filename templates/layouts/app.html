@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/public/app.css" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body class="min-h-screen">
+    <header>
+        <div class="navbar py-4 px-2 md:px-4 lg:px-0 md:max-w-7xl lg:mx-auto bg-base-100">
+            <a class="navbar-start" href="/dashboard">
+                ActixKit
+            </a>
+
+            <div class="navbar-end drawer drawer-end">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+                    <label for="my-drawer" class="btn btn-ghost btn-circle drawer-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </label>
+                </div>
+                <div class="drawer-side">
+                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                        <a href="/dashboard">
+                            ActixKit
+                        </a>
+        
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li hx-post="/logout" hx-target="body" hx-swap="outerHTML"
+                        class="btn bg-black text-white rounded-lg w-full mt-auto">Logout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <script src="/public/htmx.min.js"></script>
+</body>
+</html>

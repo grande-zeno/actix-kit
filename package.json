@@ -1,0 +1,23 @@
+{
+  "name": "actixkit",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "watch-emails": "npx mjml --watch emails/*.mjml -o templates/views/emails/",
+    "watch-css": "npx postcss assets/styles/app.css -o public/app.css --watch",
+    "dev": "npm run watch-css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/postcss": "^4.1.11",
+    "daisyui": "^5.0.50",
+    "mjml": "^4.15.3",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.11"
+  }
+}
